@@ -11,7 +11,11 @@
 		</div>
 
 		<div>
-			<h1 id = 'answer' style='text-align: center; vertical-align: middle; padding-top: 6em; color: white; font-family: "Comic Sans MS"; font-size: 5em;'> No!!!! </h1>
+			<h3 style='text-align: center; vertical-align: middle; color: white; padding-top: 30%; font-family: "Comic Sans MS";' > Is there still COVID-19? </h3>
+		</div>
+
+		<div>
+			<h1 id = 'answer' style='text-align: center; vertical-align: middle; color: white; font-family: "Comic Sans MS"; font-size: 5em;'> No!!!! </h1>
 		</div>
 
 
@@ -29,7 +33,8 @@
 
 	<script>
 
-		var x = $.getJSON('https://api.covidtracking.com/v1/us/current.json', function(data){ 
+		var mode = 
+		$.getJSON('https://api.covidtracking.com/v1/us/current.json', function(data){ 
 			var cases = data['positive'];
 			if(cases != 0){
 				document.getElementById('answer').innerHTML = 'YES';
