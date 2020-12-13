@@ -1,0 +1,50 @@
+<html>
+
+	<head>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+
+	<body style='background-color: #000000;' id = 'body'>
+
+		<div style = 'text-align: right'>
+
+		</div>
+
+		<div>
+			<h1 id = 'answer' style='text-align: center; vertical-align: middle; padding-top: 6em; color: white; font-family: "Comic Sans MS"; font-size: 5em;'> No!!!! </h1>
+		</div>
+
+
+		<div style='text-align: center;'>
+			<button style = 'background-color: #f44336; border: none; font-family: "Comic Sans MS";' onclick = 'reload()'>
+
+				Check again?
+			</button>
+		</div>
+
+
+
+	</body>
+
+
+	<script>
+
+		var x = $.getJSON('https://api.covidtracking.com/v1/us/current.json', function(data){ 
+			var cases = data['positive'];
+			if(cases != 0){
+				document.getElementById('answer').innerHTML = 'YES';
+			}
+		});
+
+		var reload = function(){
+			window.location.reload();
+		}
+
+		var switchMode = function(){
+			document.getElementById('answer')
+		}
+
+	</script>
+
+
+</html>
